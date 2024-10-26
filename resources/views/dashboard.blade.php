@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.app')
+@section('content')
     <!--begin::App Main-->
     <main class="app-main">
         <!--begin::App Content Header-->
@@ -29,14 +30,14 @@
                     <div class="col-lg-3 col-6"> <!--begin::Small Box Widget 1-->
                         <div class="small-box text-bg-primary">
                             <div class="inner">
-                                <h3>150</h3>
-                                <p>New Orders</p>
+                                <h3>{{ $mapel }}</h3>
+                                <p>Mata Pelajaran</p>
                             </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path
-                                    d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z">
-                                </path>
-                            </svg> <a href="#"
+                                    d="M12 2a1 1 0 00-1 1v18a1 1 0 001 1h9a1 1 0 001-1V8.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0015.586 2H12zm1 2h2v3a1 1 0 001 1h3v12h-6V4zm-8 0a1 1 0 00-1 1v16a1 1 0 001 1h6v-2H5V5h6V3H5z" />
+                            </svg>
+                            <a href="#"
                                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                                 More info <i class="bi bi-link-45deg"></i> </a>
                         </div> <!--end::Small Box Widget 1-->
@@ -44,14 +45,14 @@
                     <div class="col-lg-3 col-6"> <!--begin::Small Box Widget 2-->
                         <div class="small-box text-bg-success">
                             <div class="inner">
-                                <h3>53<sup class="fs-5">%</sup></h3>
-                                <p>Bounce Rate</p>
+                                <h3>{{ $kelas }}</h3>
+                                <p>Kelas</p>
                             </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path
-                                    d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z">
-                                </path>
-                            </svg> <a href="#"
+                                    d="M12 12a5 5 0 100-10 5 5 0 000 10zm6-1a5 5 0 100-10 5 5 0 000 10zm-12 1a5 5 0 100-10 5 5 0 000 10zm0 2c-2.2 0-4 1.8-4 4v1h8v-1c0-2.2-1.8-4-4-4zm12 0c-2.2 0-4 1.8-4 4v1h8v-1c0-2.2-1.8-4-4-4z" />
+                            </svg>
+                            <a href="#"
                                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                                 More info <i class="bi bi-link-45deg"></i> </a>
                         </div> <!--end::Small Box Widget 2-->
@@ -59,14 +60,14 @@
                     <div class="col-lg-3 col-6"> <!--begin::Small Box Widget 3-->
                         <div class="small-box text-bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
-                                <p>User Registrations</p>
+                                <h3>{{ $siswa }}</h3>
+                                <p>Siswa</p>
                             </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path
-                                    d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z">
-                                </path>
-                            </svg> <a href="#"
+                                    d="M12 12c2.67 0 8 1.34 8 4v3h-16v-3c0-2.66 5.33-4 8-4zm0-2a4 4 0 100-8 4 4 0 000 8z" />
+                            </svg>
+                            <a href="#"
                                 class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover">
                                 More info <i class="bi bi-link-45deg"></i> </a>
                         </div> <!--end::Small Box Widget 3-->
@@ -74,50 +75,46 @@
                     <div class="col-lg-3 col-6"> <!--begin::Small Box Widget 4-->
                         <div class="small-box text-bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
-                                <p>Unique Visitors</p>
+                                <h3>{{ $jml_nilai }} <sup class="fs-5">(rata-rata)</sup></h3>
+                                <p>Nilai</p>
                             </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path clip-rule="evenodd" fill-rule="evenodd"
-                                    d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z">
-                                </path>
-                                <path clip-rule="evenodd" fill-rule="evenodd"
-                                    d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z">
-                                </path>
-                            </svg> <a href="#"
+                                <path d="M4 22h4v-8H4v8zm6 0h4V4h-4v18zm6 0h4v-12h-4v12z" />
+                            </svg>
+                            <a href="#"
                                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                                 More info <i class="bi bi-link-45deg"></i> </a>
                         </div> <!--end::Small Box Widget 4-->
                     </div> <!--end::Col-->
                 </div> <!--end::Row--> <!--begin::Row-->
                 <div class="row"> <!-- Start col -->
-                    <div class="col-lg-7 connectedSortable">
+                    <div class="col-lg-12 connectedSortable">
                         <div class="card mb-4">
                             <div class="card-header">
-                                <h3 class="card-title">Sales Value</h3>
+                                <h3 class="card-title">Grafich Nilai</h3>
                             </div>
                             <div class="card-body">
                                 <div id="revenue-chart"></div>
                             </div>
-                        </div> <!-- /.card --> <!-- DIRECT CHAT -->
-                        <div class="card direct-chat direct-chat-primary mb-4">
+                        </div> <!-- /.card -->
+                        <!-- DIRECT CHAT -->
+                        {{-- <div class="card direct-chat direct-chat-primary mb-4">
                             <div class="card-header">
                                 <h3 class="card-title">Direct Chat</h3>
                                 <div class="card-tools"> <span title="3 New Messages" class="badge text-bg-primary">
                                         3
                                     </span> <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
                                         <i data-lte-icon="expand" class="bi bi-plus-lg"></i> <i data-lte-icon="collapse"
-                                            class="bi bi-dash-lg"></i> </button> <button type="button"
-                                        class="btn btn-tool" title="Contacts" data-lte-toggle="chat-pane"> <i
-                                            class="bi bi-chat-text-fill"></i> </button> <button type="button"
-                                        class="btn btn-tool" data-lte-toggle="card-remove"> <i class="bi bi-x-lg"></i>
+                                            class="bi bi-dash-lg"></i> </button> <button type="button" class="btn btn-tool"
+                                        title="Contacts" data-lte-toggle="chat-pane"> <i class="bi bi-chat-text-fill"></i>
+                                    </button> <button type="button" class="btn btn-tool" data-lte-toggle="card-remove"> <i
+                                            class="bi bi-x-lg"></i>
                                     </button> </div>
                             </div> <!-- /.card-header -->
                             <div class="card-body"> <!-- Conversations are loaded here -->
                                 <div class="direct-chat-messages"> <!-- Message. Default to the start -->
                                     <div class="direct-chat-msg">
-                                        <div class="direct-chat-infos clearfix"> <span
-                                                class="direct-chat-name float-start">
+                                        <div class="direct-chat-infos clearfix"> <span class="direct-chat-name float-start">
                                                 Alexander Pierce
                                             </span> <span class="direct-chat-timestamp float-end">
                                                 23 Jan 2:00 pm
@@ -129,8 +126,7 @@
                                         </div> <!-- /.direct-chat-text -->
                                     </div> <!-- /.direct-chat-msg --> <!-- Message to the end -->
                                     <div class="direct-chat-msg end">
-                                        <div class="direct-chat-infos clearfix"> <span
-                                                class="direct-chat-name float-end">
+                                        <div class="direct-chat-infos clearfix"> <span class="direct-chat-name float-end">
                                                 Sarah Bullock
                                             </span> <span class="direct-chat-timestamp float-start">
                                                 23 Jan 2:05 pm
@@ -155,8 +151,7 @@
                                         </div> <!-- /.direct-chat-text -->
                                     </div> <!-- /.direct-chat-msg --> <!-- Message to the end -->
                                     <div class="direct-chat-msg end">
-                                        <div class="direct-chat-infos clearfix"> <span
-                                                class="direct-chat-name float-end">
+                                        <div class="direct-chat-infos clearfix"> <span class="direct-chat-name float-end">
                                                 Sarah Bullock
                                             </span> <span class="direct-chat-timestamp float-start">
                                                 23 Jan 6:10 pm
@@ -242,18 +237,18 @@
                                 <form action="#" method="post">
                                     <div class="input-group"> <input type="text" name="message"
                                             placeholder="Type Message ..." class="form-control"> <span
-                                            class="input-group-append"> <button type="button"
-                                                class="btn btn-primary">
+                                            class="input-group-append"> <button type="button" class="btn btn-primary">
                                                 Send
                                             </button> </span> </div>
                                 </form>
                             </div> <!-- /.card-footer-->
-                        </div> <!-- /.direct-chat -->
+                        </div> --}}
+                        <!-- /.direct-chat -->
                     </div> <!-- /.Start col --> <!-- Start col -->
-                    <div class="col-lg-5 connectedSortable">
+                    {{-- <div class="col-lg-5 connectedSortable">
                         <div class="card text-white bg-primary bg-gradient border-primary mb-4">
                             <div class="card-header border-0">
-                                <h3 class="card-title">Sales Value</h3>
+                                <h3 class="card-title">Grafich Value</h3>
                                 <div class="card-tools"> <button type="button" class="btn btn-primary btn-sm"
                                         data-lte-toggle="card-collapse"> <i data-lte-icon="expand"
                                             class="bi bi-plus-lg"></i> <i data-lte-icon="collapse"
@@ -279,10 +274,168 @@
                                 </div> <!--end::Row-->
                             </div>
                         </div>
-                    </div> <!-- /.Start col -->
+                    </div>  --}}
+                    <!-- /.Start col -->
                 </div> <!-- /.row (main row) -->
             </div> <!--end::Container-->
         </div> <!--end::App Content-->
     </main>
     <!--end::App Main-->
-</x-app-layout>
+@endsection
+
+
+
+{{-- @push('scripts')
+    <script>
+        // Sales Chart Configuration
+        const nilaiChartConfig = {
+            series: [{
+                name: "Digital Goods",
+                data: [28, 48, 40, 19, 86, 27, 90]
+            }, {
+                name: "Electronics",
+                data: [65, 59, 80, 81, 56, 55, 40]
+            }],
+            chart: {
+                height: 300,
+                type: "area",
+                toolbar: {
+                    show: false
+                }
+            },
+            legend: {
+                show: false
+            },
+            colors: ["#0d6efd", "#20c997"],
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: "smooth"
+            },
+            xaxis: {
+                type: "datetime",
+                categories: [
+                    "2023-01-01", "2023-02-01", "2023-03-01",
+                    "2023-04-01", "2023-05-01", "2023-06-01",
+                    "2023-07-01"
+                ]
+            },
+            tooltip: {
+                x: {
+                    format: "MMMM yyyy"
+                }
+            }
+        };
+
+        // Initialize Charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sales Chart
+            if (document.querySelector("#revenue-chart")) {
+                const salesChart = new ApexCharts(
+                    document.querySelector("#revenue-chart"),
+                    nilaiChartConfig
+                );
+                salesChart.render();
+            }
+
+            // World Map
+            if (document.querySelector("#world-map")) {
+                new jsVectorMap({
+                    selector: "#world-map",
+                    map: "world"
+                });
+            }
+
+            // Sparkline Charts
+            const sparklineConfig = {
+                chart: {
+                    type: "area",
+                    height: 50,
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                stroke: {
+                    curve: "straight"
+                },
+                fill: {
+                    opacity: 0.3
+                },
+                yaxis: {
+                    min: 0
+                },
+                colors: ["#DCE6EC"]
+            };
+
+            const sparklineData = {
+                "sparkline-1": [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021],
+                "sparkline-2": [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921],
+                "sparkline-3": [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21]
+            };
+
+            Object.entries(sparklineData).forEach(([id, data]) => {
+                const element = document.querySelector(`#${id}`);
+                if (element) {
+                    const chart = new ApexCharts(element, {
+                        ...sparklineConfig,
+                        series: [{
+                            data
+                        }]
+                    });
+                    chart.render();
+                }
+            });
+        });
+    </script>
+@endpush --}}
+
+
+@push('scripts')
+    <script>
+        // Prepare data for the chart
+        const chartData = @json($chartData);
+
+        const nilaiChartConfig = {
+            series: [{
+                name: "Average Nilai",
+                data: Object.values(chartData) // Get average nilai values
+            }],
+            chart: {
+                height: 300,
+                type: "area",
+                toolbar: {
+                    show: false
+                }
+            },
+            legend: {
+                show: false
+            },
+            colors: ["#0d6efd"], // Customize color as needed
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: "smooth"
+            },
+            xaxis: {
+                categories: Object.keys(chartData), // Mapel IDs as categories (customize as needed)
+            },
+            tooltip: {
+                x: {
+                    format: "MMMM yyyy"
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.querySelector("#revenue-chart")) {
+                const salesChart = new ApexCharts(
+                    document.querySelector("#revenue-chart"),
+                    nilaiChartConfig
+                );
+                salesChart.render();
+            }
+        });
+    </script>
+@endpush

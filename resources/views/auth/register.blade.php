@@ -16,9 +16,9 @@
             {{-- <x-select-input :options="$categories" :selected="$selectedCategory" name="category_id" class="mb-4" /> --}}
             <select name="level" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" id="level">
                 <option value="" disabled selected>- Level select -</option>
-                <option value="admin">Admin</option>
-                <option value="guru">Guru</option>
-                <option value="kepala_sekolah">Kepala Sekolah</option>
+                <option value="Admin">Admin</option>
+                <option value="Guru">Guru</option>
+                <option value="Kepala Sekolah">Kepala Sekolah</option>
             </select>
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>

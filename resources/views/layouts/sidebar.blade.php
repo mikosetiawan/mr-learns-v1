@@ -1,15 +1,15 @@
  <!--begin::Sidebar-->
  <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
      <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link">
-             <!--begin::Brand Image--> <img src="{{ asset('') }}assets/img/AdminLTELogo.png" alt="AdminLTE Logo"
+             <!--begin::Brand Image--> <img src="{{ asset('') }}assets/img/mr-learn.png" alt="AdminLTE Logo"
                  class="brand-image opacity-75 shadow"> <!--end::Brand Image--> <!--begin::Brand Text--> <span
-                 class="brand-text fw-light">AdminLTE 4</span> <!--end::Brand Text--> </a>
+                 class="brand-text fw-light">MR LEARN</span> <!--end::Brand Text--> </a>
          <!--end::Brand Link-->
      </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
      <div class="sidebar-wrapper">
          <nav class="mt-2"> <!--begin::Sidebar Menu-->
              <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                 <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i
+                 <li class="nav-item menu-open"> <a href="{{ route('dashboard') }}" class="nav-link active"> <i
                              class="nav-icon bi bi-speedometer"></i>
                          <p>
                              Dashboard
@@ -31,6 +31,7 @@
                              </a> </li>
                      </ul> --}}
                  </li>
+
                  {{-- <li class="nav-item"> <a href="./generate/theme.html" class="nav-link"> <i
                              class="nav-icon bi bi-palette"></i>
                          <p>Theme Generate</p>
@@ -115,38 +116,55 @@
                              </a> </li>
                      </ul>
                  </li> --}}
+
                  <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-pencil-square"></i>
                          <p>
-                             Forms
+                             Forms Data
                              <i class="nav-arrow bi bi-chevron-right"></i>
                          </p>
                      </a>
-                     <ul class="nav nav-treeview">
-                         <li class="nav-item"> <a href="./forms/general.html" class="nav-link"> <i
-                                     class="nav-icon bi bi-circle"></i>
-                                 <p>Input Siswa</p>
-                             </a> </li>
-                     </ul>
-                     <ul class="nav nav-treeview">
-                         <li class="nav-item"> <a href="./forms/general.html" class="nav-link"> <i
-                                     class="nav-icon bi bi-circle"></i>
-                                 <p>Input Kelas</p>
-                             </a> </li>
-                     </ul>
-                     <ul class="nav nav-treeview">
-                         <li class="nav-item"> <a href="./forms/general.html" class="nav-link"> <i
-                                     class="nav-icon bi bi-circle"></i>
-                                 <p>Input Mata Pelajaran</p>
-                             </a> </li>
-                     </ul>
-                     <ul class="nav nav-treeview">
-                         <li class="nav-item"> <a href="./forms/general.html" class="nav-link"> <i
-                                     class="nav-icon bi bi-circle"></i>
-                                 <p>Input Nilai</p>
-                             </a> </li>
-                     </ul>
+                     @if (auth()->user()->level == 'Admin')
+                         <ul class="nav nav-treeview">
+                             <li class="nav-item"> <a href="{{ route('set-siswa.kelas.index') }}" class="nav-link"> <i
+                                         class="nav-icon bi bi-circle"></i>
+                                     <p>Data Kelas</p>
+                                 </a> </li>
+                         </ul>
+                     @endif
+                     @if (auth()->user()->level == 'Admin')
+                         <ul class="nav nav-treeview">
+                             <li class="nav-item"> <a href="{{ route('set-siswa.semester.index') }}" class="nav-link">
+                                     <i class="nav-icon bi bi-circle"></i>
+                                     <p>Data Semester</p>
+                                 </a> </li>
+                         </ul>
+                     @endif
+                     @if (auth()->user()->level == 'Admin' || auth()->user()->level == 'Guru' || auth()->user()->level == 'Kepala Sekolah')
+                         <ul class="nav nav-treeview">
+                             <li class="nav-item"> <a href="{{ route('set-siswa.siswa.index') }}" class="nav-link"> <i
+                                         class="nav-icon bi bi-circle"></i>
+                                     <p>Data Siswa</p>
+                                 </a> </li>
+                         </ul>
+                     @endif
+                     @if (auth()->user()->level == 'Admin')
+                         <ul class="nav nav-treeview">
+                             <li class="nav-item"> <a href="{{ route('set-siswa.mapel.index') }}" class="nav-link"> <i
+                                         class="nav-icon bi bi-circle"></i>
+                                     <p>Data Mata Pelajaran</p>
+                                 </a> </li>
+                         </ul>
+                     @endif
+                     @if (auth()->user()->level == 'Admin' || auth()->user()->level == 'Guru' || auth()->user()->level == 'Kepala Sekolah')
+                         <ul class="nav nav-treeview">
+                             <li class="nav-item"> <a href="{{ route('set-siswa.nilai.index') }}" class="nav-link">
+                                     <i class="nav-icon bi bi-circle"></i>
+                                     <p>Data Nilai</p>
+                                 </a> </li>
+                         </ul>
+                     @endif
                  </li>
-                 <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-table"></i>
+                 {{-- <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-table"></i>
                          <p>
                              Tables
                              <i class="nav-arrow bi bi-chevron-right"></i>
@@ -158,8 +176,8 @@
                                  <p>Simple Tables</p>
                              </a> </li>
                      </ul>
-                 </li>
-                 <li class="nav-header">EXAMPLES</li>
+                 </li> --}}
+                 {{-- <li class="nav-header">EXAMPLES</li>
                  <li class="nav-item"> <a href="#" class="nav-link"> <i
                              class="nav-icon bi bi-box-arrow-in-right"></i>
                          <p>
@@ -209,13 +227,19 @@
                                  <p>Lockscreen</p>
                              </a> </li>
                      </ul>
-                 </li>
-                 <li class="nav-header">DOCUMENTATIONS</li>
-                 <li class="nav-item"> <a href="./docs/introduction.html" class="nav-link"> <i
-                             class="nav-icon bi bi-download"></i>
-                         <p>Installation</p>
-                     </a> </li>
-                 <li class="nav-item"> <a href="./docs/layout.html" class="nav-link"> <i
+                 </li> --}}
+                 {{-- <li class="nav-header">DOCUMENTATIONS</li> --}}
+
+                 @if (auth()->user()->level == 'Admin' || auth()->user()->level == 'Kepala Sekolah')
+                     <li class="nav-item">
+                         <a href="{{ route('set-siswa.user.index') }}" class="nav-link"> <i
+                                 class="nav-icon bi bi-people-fill"></i>
+                             <p>Registrasi</p>
+                         </a>
+                     </li>
+                 @endif
+
+                 {{-- <li class="nav-item"> <a href="./docs/layout.html" class="nav-link"> <i
                              class="nav-icon bi bi-grip-horizontal"></i>
                          <p>Layout</p>
                      </a> </li>
@@ -254,8 +278,8 @@
                                  <p>Treeview</p>
                              </a> </li>
                      </ul>
-                 </li>
-                 <li class="nav-item"> <a href="./docs/browser-support.html" class="nav-link"> <i
+                 </li> --}}
+                 {{-- <li class="nav-item"> <a href="./docs/browser-support.html" class="nav-link"> <i
                              class="nav-icon bi bi-browser-edge"></i>
                          <p>Browser Support</p>
                      </a> </li>
@@ -267,10 +291,10 @@
                              class="nav-icon bi bi-question-circle-fill"></i>
                          <p>FAQ</p>
                      </a> </li>
-                 <li class="nav-item"> <a href="./docs/license.html" class="nav-link"> <i
-                             class="nav-icon bi bi-patch-check-fill"></i>
+                 <li class="nav-item"> <a href="./docs/license.html" class="nav-link"> <i --}}
+                 {{-- class="nav-icon bi bi-patch-check-fill"></i>
                          <p>License</p>
-                     </a> </li>
+                     </a> </li> --}}
                  {{-- <li class="nav-header">MULTI LEVEL EXAMPLE</li>
                  <li class="nav-item"> <a href="#" class="nav-link"> <i
                              class="nav-icon bi bi-circle-fill"></i>

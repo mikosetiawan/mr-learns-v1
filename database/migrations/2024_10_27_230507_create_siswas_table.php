@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('no_tlp');
-            $table->string('jk');
-            $table->string('alamat');
-            $table->foreignId('id_kelas')->constrained('kelas');
-            $table->foreignId('id_semester')->constrained('semester');
+            $table->enum('jk', ['L', 'P']); 
+            $table->string('no_hp', 15);   
+            $table->text('alamat');       
+            $table->foreignId('id_kelas')->constrained('kelas')->onDelete('cascade');
+            $table->foreignId('id_semester')->constrained('semesters')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
